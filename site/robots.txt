@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wavy-flow-terminal.pages.dev/sitemap.xml

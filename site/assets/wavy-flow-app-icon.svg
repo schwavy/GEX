@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Wavy Flow app icon</title>
+  <defs>
+    <linearGradient id="bg" x1="45" y1="24" x2="477" y2="488" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21143F"/><stop offset=".54" stop-color="#0B0715"/><stop offset="1" stop-color="#030309"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="60" y1="50" x2="462" y2="468" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3D87A"/><stop offset=".52" stop-color="#D8B75B"/><stop offset=".78" stop-color="#8F70FF"/><stop offset="1" stop-color="#35D7FF"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="104" y1="138" x2="410" y2="378" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF3B0"/><stop offset=".38" stop-color="#F3D87A"/><stop offset=".76" stop-color="#D8B75B"/><stop offset="1" stop-color="#F8C84E"/>
+    </linearGradient>
+    <filter id="glow" x="-45%" y="-45%" width="190%" height="190%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect x="12" y="12" width="488" height="488" rx="118" fill="url(#bg)"/>
+  <rect x="15" y="15" width="482" height="482" rx="115" fill="none" stroke="url(#edge)" stroke-width="6" opacity=".82"/>
+  <circle cx="256" cy="256" r="177" fill="#05040B" fill-opacity=".78" stroke="url(#edge)" stroke-width="8"/>
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#FFFFFF" stroke-opacity=".09" stroke-width="2" stroke-dasharray="4 14"/>
+  <path d="M112 168C145 235 166 329 211 351C239 365 249 307 258 270C270 311 281 365 309 351C353 329 374 235 400 168" fill="none" stroke="url(#gold)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M344 222C369 205 391 181 407 153" fill="none" stroke="#35D7FF" stroke-width="8" stroke-linecap="round"/>
+  <path d="M402 153L424 142L414 165Z" fill="#35D7FF"/>
+</svg>

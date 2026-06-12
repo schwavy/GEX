@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "name": "Wavy Flow Terminal",
+  "short_name": "Wavy Flow",
+  "description": "Read-only SPX and NDX 0DTE/1DTE options-flow intelligence terminal.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#05040b",
+  "theme_color": "#0b0714",
+  "categories": ["finance", "business", "utilities"],
+  "icons": [
+    {
+      "src": "/assets/wavy-flow-mark-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/wavy-flow-mark-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

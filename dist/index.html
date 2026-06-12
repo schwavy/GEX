@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0714" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Rules-based SPX and NDX structure, activity, open-interest, and estimated flow-pressure terminal generated from published Thinkorswim exports." />
+  <meta name="application-name" content="Wavy Flow Terminal" />
+  <meta name="apple-mobile-web-app-title" content="Wavy Flow" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="msapplication-TileColor" content="#0b0714" />
+  <link rel="canonical" href="https://wavy-flow-terminal.pages.dev/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Wavy Flow Terminal" />
+  <meta property="og:title" content="Wavy Flow Terminal | SPX &amp; NDX Options Flow" />
+  <meta property="og:description" content="0DTE/1DTE structure, gross activity, open-interest positioning, estimated flow pressure, and contract screening for SPX and NDX." />
+  <meta property="og:url" content="https://wavy-flow-terminal.pages.dev/" />
+  <meta property="og:image" content="https://wavy-flow-terminal.pages.dev/assets/social-preview-v5.png" />
+  <meta property="og:image:url" content="https://wavy-flow-terminal.pages.dev/assets/social-preview-v5.png" />
+  <meta property="og:image:secure_url" content="https://wavy-flow-terminal.pages.dev/assets/social-preview-v5.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Wavy Flow Terminal — SPX and NDX options-flow intelligence" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:domain" content="wavy-flow-terminal.pages.dev" />
+  <meta name="twitter:url" content="https://wavy-flow-terminal.pages.dev/" />
+  <meta name="twitter:title" content="Wavy Flow Terminal | SPX &amp; NDX Options Flow" />
+  <meta name="twitter:description" content="0DTE/1DTE structure, activity, OI, GEX proxy coverage, and rules-based contract screening." />
+  <meta name="twitter:image" content="https://wavy-flow-terminal.pages.dev/assets/social-preview-v5.png" />
+  <meta name="twitter:image:src" content="https://wavy-flow-terminal.pages.dev/assets/social-preview-v5.png" />
+  <meta name="twitter:image:alt" content="Wavy Flow Terminal market intelligence dashboard" />
+
+  <title>Wavy Flow Terminal | SPX &amp; NDX Options Flow</title>
+  <link rel="icon" href="./favicon.svg?v=9" type="image/svg+xml" />
+  <link rel="icon" href="./assets/favicon-32.png?v=9" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/favicon-16.png?v=9" sizes="16x16" type="image/png" />
+  <link rel="shortcut icon" href="./favicon.ico?v=9" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=9" />
+  <link rel="mask-icon" href="./assets/safari-pinned-tab.svg?v=9" color="#d8b75b" />
+  <link rel="manifest" href="./site.webmanifest?v=9" />
+  <link rel="preload" href="./assets/wavy-flow-mark.svg?v=9" as="image" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=13" />
+
+
+</head>
+<body data-ticker="spx">
+  <div class="brand-grid" aria-hidden="true"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="scanline" aria-hidden="true"></div>
+
+  <header class="topbar shell">
+    <a class="brand" href="#top" aria-label="Wavy Flow Terminal home">
+      <span class="brand-logo" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img" focusable="false">
+          <defs>
+            <linearGradient id="wfGold" x1="10" y1="12" x2="54" y2="52" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#fff2ad"/>
+              <stop offset=".48" stop-color="#e8ca68"/>
+              <stop offset="1" stop-color="#35d7ff"/>
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="28" fill="#0c0915" stroke="url(#wfGold)" stroke-width="2.25"/>
+          <path d="M13.5 21.5c4.5 9.5 7.8 24 14.2 26.6 4.3 1.8 5.1-7.2 6.3-12.8 1.8 6.1 3.5 14.8 7.9 12.8 6.4-2.8 9.2-17.2 12.6-26.6" fill="none" stroke="url(#wfGold)" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 29c4.8-2.6 8.4-6.4 11-11" fill="none" stroke="#35d7ff" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <strong>WAVY FLOW</strong>
+        <small>OPTIONS INTELLIGENCE TERMINAL</small>
+      </span>
+    </a>
+
+    <div class="status-strip" aria-live="polite">
+      <span class="live-dot"></span>
+      <span id="marketStatus">SNAPSHOT MODE</span>
+      <span class="divider">/</span>
+      <span id="snapshotLabel">LOADING DATA</span>
+    </div>
+
+    <div class="toolbar">
+      <label class="dataset-label" for="datasetSelect">Dashboard</label>
+      <select id="datasetSelect" class="dataset-select" aria-label="Select published dashboard"></select>
+      <button id="refreshButton" class="ghost-btn" type="button" aria-label="Refresh the published dashboard">Refresh</button>
+    </div>
+  </header>
+
+  <main id="top" class="shell page-grid">
+    <section class="hero panel panel-glow">
+      <img class="hero-watermark" src="./assets/wavy-flow-mark.svg?v=9" alt="" aria-hidden="true" />
+      <div class="hero-beam" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <div class="eyebrow">STRUCTURE &amp; FLOW PRESSURE</div>
+        <h1 id="heroTitle">Loading market structure…</h1>
+        <p id="heroRead" class="hero-read">Parsing the published dashboard with missing-data-aware, independent-axis scoring.</p>
+        <div class="hero-pills">
+          <span id="instrumentPill" class="pill outline">INDEX —</span>
+          <span id="dtePill" class="pill outline">DTE —</span>
+          <span id="biasPill" class="pill neutral">NEUTRAL</span>
+          <span id="confidencePill" class="pill outline">CONFIDENCE —</span>
+          <span id="qualityPill" class="pill outline">DATA QUALITY —</span>
+        </div>
+      </div>
+      <div id="spotOrbit" class="spot-orbit" aria-label="Estimated index spot">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="spot-core">
+          <small id="spotLabel">EST. INDEX</small>
+          <strong id="spotValue">—</strong>
+          <span id="spotContext">from strike distance</span>
+        </div>
+      </div>
+    </section>
+
+    <aside id="dataWarningBanner" class="data-banner" hidden></aside>
+
+    <section class="metric-row">
+      <article class="metric-card">
+        <span id="flowMetricLabel">Flow-Pressure Axis</span>
+        <strong id="marketFlowValue">—</strong>
+        <small id="marketFlowNote">one pressure axis, not multiple confirmations</small>
+      </article>
+      <article class="metric-card">
+        <span id="premiumMetricLabel">Fresh Gross Premium (Est.)</span>
+        <strong id="freshPremiumValue">—</strong>
+        <small id="premiumMetricNote">gross 10-minute turnover estimate</small>
+      </article>
+      <article class="metric-card">
+        <span>Contracts Loaded</span>
+        <strong id="contractCount">—</strong>
+        <small id="contractCoverage">calls / puts</small>
+      </article>
+      <article class="metric-card">
+        <span id="cheapPoolLabel">Under-$5 Pool</span>
+        <strong id="cheapCount">—</strong>
+        <small id="cheapQuality">qualified candidates</small>
+      </article>
+    </section>
+
+    <section id="levels" class="section-block">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">STRUCTURAL MAP</span>
+          <h2>Battlefield Levels</h2>
+        </div>
+        <p>Structure defines the map. Fresh pressure and underlying momentum determine activation.</p>
+      </div>
+      <div id="levelGrid" class="level-grid"></div>
+    </section>
+
+    <section class="split-grid">
+      <article class="panel scenario-panel bull-panel">
+        <div class="panel-title">
+          <span class="signal-icon">↗</span>
+          <div><span class="eyebrow">BULL CASE</span><h2>Upside Path</h2></div>
+        </div>
+        <p id="bullNarrative" class="scenario-copy">—</p>
+        <div id="bullPath" class="path-line"></div>
+      </article>
+      <article class="panel scenario-panel bear-panel">
+        <div class="panel-title">
+          <span class="signal-icon">↘</span>
+          <div><span class="eyebrow">BEAR CASE</span><h2>Downside Path</h2></div>
+        </div>
+        <p id="bearNarrative" class="scenario-copy">—</p>
+        <div id="bearPath" class="path-line"></div>
+      </article>
+    </section>
+
+    <section id="contracts" class="section-block contract-section">
+      <div class="section-heading contract-heading">
+        <div>
+          <span class="eyebrow">CONTRACT SELECTION</span>
+          <h2>Premium Strike Radar</h2>
+        </div>
+        <div class="premium-control" title="Change the maximum displayed contract premium">
+          <label for="priceCapInput">MAX PREMIUM</label>
+          <div class="premium-input-wrap"><span>$</span><input id="priceCapInput" type="number" min="0.25" max="50" step="0.25" value="5.00" inputmode="decimal" aria-label="Maximum contract premium" /></div>
+        </div>
+      </div>
+      <p class="section-note">Lower premium does not mean higher quality. ACTIONABLE status requires price, spread, distance, recent volume, fresh premium, buy pressure, and aligned underlying momentum. Missing gates prevent promotion.</p>
+      <div id="contractCards" class="contract-grid"></div>
+    </section>
+
+    <section id="trade-plan" class="trade-plan section-block">
+      <div class="section-heading"><div><span class="eyebrow">EXECUTION</span><h2>Trade Plan</h2></div><p>No position is assumed. Wait for price acceptance through the trigger and contract flow confirmation.</p></div>
+      <div class="table-wrap panel trade-plan-wrap">
+        <table>
+          <thead><tr><th>Bias</th><th>Entry Zone</th><th>Stop Loss</th><th>Take Profit Levels</th><th>Rationale</th></tr></thead>
+          <tbody id="tradePlanBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="quality" class="split-grid lower-grid">
+      <article class="panel context-panel">
+        <div class="panel-title"><span class="signal-icon">◈</span><div><span class="eyebrow">SNAPSHOT CONTEXT</span><h2>Dataset Profile</h2></div></div>
+        <div id="contextGrid" class="context-grid"></div>
+      </article>
+
+      <article class="panel quality-panel">
+        <div class="panel-title"><span class="signal-icon">◎</span><div><span class="eyebrow">MODEL HYGIENE</span><h2>Data Quality</h2></div></div>
+        <div id="qualityList" class="quality-list"></div>
+      </article>
+    </section>
+
+    <section id="flow-table" class="section-block">
+      <div class="section-heading">
+        <div><span class="eyebrow">STRIKE TABLE</span><h2 id="strikeTableTitle">Near-Spot Structure &amp; Pressure</h2></div>
+        <div class="table-controls">
+          <button class="table-filter active" data-filter="NEAR" type="button">Near Spot</button>
+          <button class="table-filter" data-filter="TOP" type="button">Top Structure</button>
+          <button class="table-filter" data-filter="C" type="button">Calls</button>
+          <button class="table-filter" data-filter="P" type="button">Puts</button>
+          <button id="cheapFilterLabel" class="table-filter" data-filter="CHEAP" type="button">Under $5</button>
+        </div>
+      </div>
+      <div class="table-wrap panel flow-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Contract</th><th>Price</th><th>Dist. %</th><th>Steps</th><th>Pressure State</th><th>Sell Pressure</th><th>GEX Proxy</th><th>OI Value</th><th>Vol/OI</th><th>Fresh Gross</th><th>Dir. Proxy</th><th>Structure</th><th>Contract</th>
+            </tr>
+          </thead>
+          <tbody id="strikeTable"></tbody>
+        </table>
+      </div>
+      <p id="tableSummary" class="table-summary">Showing the most relevant strikes near spot.</p>
+    </section>
+
+  </main>
+
+  <footer class="shell footer">
+    <span>WAVY FLOW TERMINAL · READ-ONLY PUBLISHED DATA</span>
+    <span>Rules-based estimates only — not institutional-flow identification or a probability claim. Options involve substantial risk.</span>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Updated</div>
+
+  <nav class="mobile-nav" aria-label="Mobile dashboard navigation">
+    <a href="#top"><span>⌂</span><small>Overview</small></a>
+    <a href="#levels"><span>◇</span><small>Levels</small></a>
+    <a href="#contracts"><span>◎</span><small>Contracts</small></a>
+    <a href="#trade-plan"><span>↗</span><small>Plan</small></a>
+    <a href="#quality"><span>✓</span><small>Quality</small></a>
+  </nav>
+  <script type="module" src="./app.js?v=13"></script>
+</body>
+</html>

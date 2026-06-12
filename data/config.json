@@ -1,0 +1,41 @@
+{
+  "default": "spx-0dte",
+  "datasets": [
+    {
+      "id": "spx-0dte",
+      "ticker": "SPX",
+      "targetDte": 0,
+      "file": "spx-0dte.csv",
+      "enabled": true,
+      "mode": "auto",
+      "sampleSha256": "b1ad3fbb639c8f780b04df5844239a24a1f7f05d26c7bd25af51d91f4cd865b8"
+    },
+    {
+      "id": "spx-1dte",
+      "ticker": "SPX",
+      "targetDte": 1,
+      "file": "spx-1dte.csv",
+      "enabled": false,
+      "mode": "auto",
+      "sampleSha256": "e88a66087fc137b414700ef5b40b2954fa6dd0561919f43d6563d3a46ac87208"
+    },
+    {
+      "id": "ndx-0dte",
+      "ticker": "NDX",
+      "targetDte": 0,
+      "file": "ndx-0dte.csv",
+      "enabled": true,
+      "mode": "auto",
+      "sampleSha256": "53ac4413a93bdcbd0801ba0a139691c6d1ca4cdc3151706d9559d3ef7480f882"
+    },
+    {
+      "id": "ndx-1dte",
+      "ticker": "NDX",
+      "targetDte": 1,
+      "file": "ndx-1dte.csv",
+      "enabled": false,
+      "mode": "auto",
+      "sampleSha256": "53ac4413a93bdcbd0801ba0a139691c6d1ca4cdc3151706d9559d3ef7480f882"
+    }
+  ]
+}

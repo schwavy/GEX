@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 300" role="img" aria-labelledby="title desc">
+  <title id="title">Wavy Flow Terminal wordmark</title>
+  <desc id="desc">Gold Wavy Flow mark with Wavy Flow Terminal text.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF3B0"/><stop offset=".5" stop-color="#F3D87A"/><stop offset="1" stop-color="#D8B75B"/></linearGradient>
+    <linearGradient id="orbit" x1="20" y1="0" x2="280" y2="280" gradientUnits="userSpaceOnUse"><stop stop-color="#F3D87A"/><stop offset=".62" stop-color="#D8B75B"/><stop offset=".82" stop-color="#8F70FF"/><stop offset="1" stop-color="#35D7FF"/></linearGradient>
+  </defs>
+  <g transform="translate(20 18)">
+    <circle cx="132" cy="132" r="112" fill="none" stroke="url(#orbit)" stroke-width="8" stroke-linecap="round" stroke-dasharray="470 92" transform="rotate(-24 132 132)"/>
+    <circle cx="132" cy="132" r="93" fill="none" stroke="#FFFFFF" stroke-opacity=".11" stroke-width="2" stroke-dasharray="3 10"/>
+    <path d="M50 82C69 121 82 182 109 196C126 205 132 168 137 146C145 171 152 205 169 196C197 182 209 121 226 82" fill="none" stroke="url(#gold)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M195 118C211 107 224 93 234 77" fill="none" stroke="#35D7FF" stroke-width="6" stroke-linecap="round"/><path d="M231 77L245 70L239 85Z" fill="#35D7FF"/>
+  </g>
+  <text x="320" y="125" fill="#F7F3FF" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="84" font-weight="900" letter-spacing="3">WAVY FLOW</text>
+  <text x="325" y="204" fill="url(#gold)" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="43" font-weight="800" letter-spacing="17">TERMINAL</text>
+  <text x="327" y="258" fill="#91879F" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="650" letter-spacing="3">SPX + NDX OPTIONS FLOW INTELLIGENCE</text>
+</svg>
